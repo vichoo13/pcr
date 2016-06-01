@@ -1,0 +1,127 @@
+// Template to Plot / Explore 2 Symbols
+SetChartOptions(0,chartShowArrows|chartShowDates);
+Plot( C, "Close", ParamColor("Color", colorBlack ), styleNoTitle | ParamStyle("Style") | GetPriceStyle()|styleOwnScale );
+FirstScrip=ParamList("FirstScrip", "NIFTY|BANKNIFTY" ); 
+expiry1 = ParamList("expiry1",   "16JUN|16JUL|16AUG|16SEP|16OCT|16NOV|16DEC" );
+Strike1=Param("Strike1", 0,0,22000,1 );
+type1 = ParamList("type1", "CE|PE" );
+
+SecondScrip=ParamList("SecondScrip",  "NIFTY|BANKNIFTY" ); 
+expiry2 = ParamList("expiry2",   "16JUN|16JUL|16AUG|16SEP|16OCT|16NOV|16DEC" );
+Strike2=Param("Strike2", 0,0,22000,1 );
+type2 = ParamList("type2", "PE|CE" );
+
+ThirdScrip=ParamList("ThirdScrip",  "NIFTY|BANKNIFTY" );
+expiry3 = ParamList("expiry3",    "16JUN|16JUL|16AUG|16SEP|16OCT|16NOV|16DEC" );
+Strike3=Param("Strike3", 0,0,22000,1 );
+type3 = ParamList("type3", "CE|PE" );
+FourthScrip=ParamList("FourthScrip", "NIFTY|BANKNIFTY" ); 
+expiry4 = ParamList("expiry4",    "16JUN|16JUL|16AUG|16SEP|16OCT|16NOV|16DEC" );
+Strike4=Param("Strike4", 0,0,22000,1 );
+type4 = ParamList("type4", "PE|CE" );
+FifthScrip=ParamList("FifthScrip",  "NIFTY|BANKNIFTY" ); 
+expiry5 = ParamList("expiry5",  "16JUN|16JUL|16AUG|16SEP|16OCT|16NOV|16DEC" );
+Strike5=Param("Strike5", 0,0,22000,1 );
+type5 = ParamList("type5", "CE|PE" );
+SixthScrip=ParamList("SixthScrip", "NIFTY|BANKNIFTY" ); 
+expiry6= ParamList("expiry6",   "16JUN|16JUL|16AUG|16SEP|16OCT|16NOV|16DEC" );
+Strike6=Param("Strike6", 0,0,22000,1 );
+type6 = ParamList("type6",  "PE|CE" );
+SeventhScrip=ParamList("SeventhScrip", "NIFTY|BANKNIFTY" ); 
+expiry7= ParamList("expiry7",  "16JUN|16JUL|16AUG|16SEP|16OCT|16NOV|16DEC" );
+Strike7=Param("Strike7", 0,0,22000,1 );
+type7 = ParamList("type7", "CE|PE" );
+
+EighthScrip=ParamList("EighthScrip", "NIFTY|BANKNIFTY" ); 
+expiry8= ParamList("expiry8",  "16JUN|16JUL|16AUG|16SEP|16OCT|16NOV|16DEC" );
+Strike8=Param("Strike8", 0,0,22000,1 );
+type8 = ParamList("type8",  "PE|CE" );
+
+
+NinthScrip=ParamList("NinthScrip", "NIFTY|BANKNIFTY" ); 
+expiry9= ParamList("expiry9",  "16JUN|16JUL|16AUG|16SEP|16OCT|16NOV|16DEC" );
+Strike9=Param("Strike9", 0,0,22000,1 );
+type9 = ParamList("type9", "CE|PE" );
+
+TenthScrip=ParamList("TenthScrip", "NIFTY|BANKNIFTY" ); 
+expiry10= ParamList("expiry10",  "16JUN|16JUL|16AUG|16SEP|16OCT|16NOV|16DEC" );
+Strike10=Param("Strike10", 0,0,22000,1 );
+type10 = ParamList("type10", "PE|CE" );
+
+EleventhScrip=ParamList("EleventhScrip", "NIFTY|BANKNIFTY" ); 
+expiry11= ParamList("expiry11",  "16JUN|16JUL|16AUG|16SEP|16OCT|16NOV|16DEC" );
+Strike11=Param("Strike11", 0,0,22000,1 );
+type11 = ParamList("type11", "CE|PE" );
+
+TwelfthScrip=ParamList("TwelfthScrip", "NIFTY|BANKNIFTY" ); 
+expiry12= ParamList("expiry12",  "16JUN|16JUL|16AUG|16SEP|16OCT|16NOV|16DEC" );
+Strike12=Param("Strike12", 0,0,22000,1 );
+type12 = ParamList("type12",  "PE|CE" );
+
+
+Symbol1= FirstScrip+expiry1+Strike1+type1;
+Symbol2= SecondScrip+expiry2+Strike2+type2;
+Symbol3= ThirdScrip+expiry3+Strike3+type3;
+Symbol4= FourthScrip+expiry4+Strike4+type4;
+Symbol5= FifthScrip+expiry5+Strike5+type5;
+Symbol6= SixthScrip+expiry6+Strike6+type6;
+
+Symbol7=SeventhScrip+expiry7+Strike7+type7;
+Symbol8= EighthScrip+expiry8+Strike8+type8;
+Symbol9= NinthScrip+expiry9+Strike9+type9;
+Symbol10=TenthScrip+expiry10+Strike10+type10;
+Symbol11=EleventhScrip+expiry11+Strike11+type11;
+Symbol12= TwelfthScrip+expiry12+Strike12+type12;
+
+AD = Foreign(Symbol1,"I");
+AE = Foreign(Symbol2,"I");
+
+AF= AE/AD;
+AD1 = Foreign(Symbol3,"I");
+AE1 = Foreign(Symbol4,"I");
+AF1= AE1/AD1;
+AD2 = Foreign(Symbol5,"I");
+AE2 = Foreign(Symbol6,"I");
+AF2= AE2/AD2;
+AD3= Foreign(Symbol7,"I");
+AE3 = Foreign(Symbol8,"I");
+AF3= AE3/AD3;
+AD4= Foreign(Symbol9,"I");
+AE4 = Foreign(Symbol10,"I");
+AF4= AE4/AD4;
+AD5= Foreign(Symbol11,"I");
+AE5 = Foreign(Symbol12,"I");
+AF5= AE5/AD5;
+s1=Strike1;
+
+
+
+
+Plot(AF,  "pcr", colorGreen, styleLine);
+Plot(AF1, "PCR 105", colorRed, styleLine);
+Plot(AF2, "PCR110", colorBlue, styleLine);
+Plot(AF3, "PCR 8300", colorBrown, styleLine);
+Plot(AF4, "PCR 8400", colorDarkGreen, styleLine);
+Plot(AF5, "PCR 8500", colorBlack, styleLine);
+
+//Plot(EMA(AF3,50), "50ema pcr5.8k", colorDarkGreen, styleDots);
+//Plot(EMA(AF3,100), "100ema pcr5.8k", colorDarkBlue, styleDots);
+Title = EncodeColor(colorRed) +"PCR" + "  " + EncodeColor(colorBlue)+ 
+ "  - " + Date() +" - " + EncodeColor(colorGreen)+ 
+
+"\n"+EncodeColor(colorBlue)+
+"\n"+"           Strike    "+"               PCR"+"                  PE OI"+"                   CE OI"+EncodeColor(colorBlue)+
+"\n"+"            ====="+"                 ====="+"                 ====="+"                 ====="+EncodeColor(colorGreen)+
+
+"\n"+"            "+WriteVal(Strike1,1.0)+"                   "+WriteVal(AF,1.3)+"             "+  WriteVal(AE,1.0)+"             "+  WriteVal(AD,1.0)+
+
+
+"\n"+"            "+WriteVal(Strike3,1.0)+"                   "+WriteVal(AF1,1.3)+"             "+  WriteVal(AE1,1.0)+"             "+  WriteVal(AD1,1.0)+
+
+"\n"+"            "+WriteVal(Strike5,1.0)+"                   "+WriteVal(AF2,1.3)+"             "+  WriteVal(AE2,1.0)+"             "+  WriteVal(AD2,1.0)+
+
+"\n"+"            "+WriteVal(Strike7,1.0)+"                   "+WriteVal(AF3,1.3)+"             "+  WriteVal(AE3,1.0)+"             "+  WriteVal(AD3,1.0)+EncodeColor(colorRed)+
+
+"\n"+"            "+WriteVal(Strike9,1.0)+"                   "+WriteVal(AF4,1.3)+"             "+  WriteVal(AE4,1.0)+"             "+  WriteVal(AD4,1.0)+
+
+"\n"+"            "+WriteVal(Strike11,1.0)+"                   "+WriteVal(AF5,1.3)+"             "+  WriteVal(AE5,1.0)+"             "+  WriteVal(AD5,1.0);
